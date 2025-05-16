@@ -130,7 +130,6 @@ export default function HomePage() {
 
     const handleInputChange = (e, index) => {
         const { name, value } = e.target;
-        console.log(formData);
 
         if (index === undefined) {
             setFormData({ ...formData, [name]: value });
@@ -164,9 +163,9 @@ export default function HomePage() {
         }
     }
         , 250), [])
-    const handleDelete = useCallback(debounce(id => {
+    const handleDelete = useCallback(debounce((id, frutta) => {
         try {
-            deleteFruits(id)
+            deleteFruits(id, frutta)
         } catch (error) {
             console.error(error);
 
@@ -206,7 +205,7 @@ export default function HomePage() {
                             <h2>{item.title}</h2>
                             <AppLike id={item.id}></AppLike>
                             <p>Categoria: {item.category}</p>
-                            <FontAwesomeIcon className='home-icon-top home-icon-top-left' icon={faTrash} onClick={() => handleDelete(item.id)} />
+                            <FontAwesomeIcon className='home-icon-top home-icon-top-left' icon={faTrash} onClick={() => handleDelete(fruits, item.id)} />
                             <FontAwesomeIcon className="home-icon-top home-icon-top-right " icon={faPlus} onClick={() => addElemComp(item.id)} />
                             <Link to={`/detail/${item.id}`}>Dettagli</Link>
                         </div>

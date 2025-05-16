@@ -12,8 +12,8 @@ export default function useFruits() {
 
     const getFruits = async () => {
         try {
-            // const response = await fetchData(`${api}/fruits`)
             setFruits(fruit)
+            // console.log('fruit', fruit);
         } catch (error) {
             console.error("Error fetching data:", error)
         }
@@ -21,7 +21,6 @@ export default function useFruits() {
 
     const getSingleFruit = async (id) => {
         const idToFind = parseInt(id)
-        // const response = await fetchData(`${api}/fruits/${id}`)
         const response = fruits.find(item => item.id === idToFind)
 
         if (response === undefined) {
@@ -30,9 +29,10 @@ export default function useFruits() {
         return response
     }
 
-    const deleteFruits = async (id) => {
+    const deleteFruits = async (frutta, id) => {
         const idToFind = parseInt(id);
-        const response = fruits.find(fruit => fruit.id === idToFind);
+        const response = frutta.find(fruit => fruit.id === idToFind);
+        console.log(response);
 
         if (response) {
             setFruits(prev => prev.filter(item => item.id !== id))
