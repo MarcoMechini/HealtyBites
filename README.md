@@ -18,6 +18,8 @@ Healthy Bites è un'applicazione web interattiva per la gestione e l'analisi dei
 - **React Router**: Per la navigazione tra le pagine.
 - **FontAwesome**: Per le icone.
 
+Demo Live: **https://healty-bites.vercel.app/**
+
 ## Installazione
 
 1. Clona il repository:
