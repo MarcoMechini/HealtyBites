@@ -1,5 +1,9 @@
-.product-list {
-    background-image: url('/immagine-gocce.png');
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    background-image: url('/background_body.jpg');
 }
 
 /* Stile per l'input di ricerca */
@@ -247,6 +251,8 @@ XXXXXXXXXXX */
 
 /* Stile per la sezione section-comparator */
 .section-comparator {
+    background-image: url('/frutta.jpg');
+    background-position: bottom;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -255,7 +261,7 @@ XXXXXXXXXXX */
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 20px;
-    margin: 20px 0;
+    /* margin: 20px 0; */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 

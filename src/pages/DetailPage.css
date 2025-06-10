@@ -1,13 +1,3 @@
-/* DetailPage.css */
-
-/* Stile per il contenitore principale */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
-}
-
 /* Stile per i dettagli */
 .detail-container {
     background-color: #fff;

@@ -35,7 +35,7 @@ a:hover {
 
 /* Stile aggiornato per la nav bar */
 nav {
-    background-image: url('/immagine-gocce.png');
+    /* background-image: url('/immagine-gocce.png'); */
     padding: 1rem;
 }
 
@@ -48,7 +48,12 @@ nav ul {
 }
 
 nav ul li {
+    min-width: fit-content;
+    padding: 8px;
     margin: 0 1rem;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 nav ul li a {
