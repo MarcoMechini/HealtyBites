@@ -3,7 +3,7 @@ import { useGlobalContext } from '../context/GlobalContext';
 export default function AppNavbar() {
     const { setSideVisible } = useGlobalContext();
     return (
-        <nav>
+        <nav className='pointer'>
             <ul>
                 <li>
                     <Link to="/">Home</Link>

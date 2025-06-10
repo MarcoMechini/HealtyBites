@@ -21,7 +21,7 @@ export default function AppLike({ id }) {
 
     return (
         <div
-            className="like"
+            className="like cursor-pointer"
             onClick={() => handleLike(id)}>
             <HeartIcon filled={like.includes(id)} />
         </div>

@@ -8,39 +8,7 @@ import { faArrowUp, faArrowDown, faFilter, faPlus, faTrash } from '@fortawesome/
 import Comparator from '../components/Comparator';
 import debounce from 'lodash/debounce';
 import AppModal from '../components/AppModal';
-
-const defaultValues = {
-    "title": "Banana",
-    "calories": 89,
-    "category": "Bacche",
-    "nutritionalValues": [
-        {
-            "name": "Carboidrati",
-            "quantity": 23,
-            "unit": "g"
-        },
-        {
-            "name": "Fibre",
-            "quantity": 2.6,
-            "unit": "g"
-        },
-        {
-            "name": "Zuccheri",
-            "quantity": 12,
-            "unit": "g"
-        },
-        {
-            "name": "Potassio",
-            "quantity": 358,
-            "unit": "mg"
-        },
-        {
-            "name": "Vitamina B6",
-            "quantity": 0.4,
-            "unit": "mg"
-        }
-    ]
-}
+import { text } from '@fortawesome/fontawesome-svg-core';
 
 const initialValue = {
     "title": "",
@@ -161,14 +129,13 @@ export default function HomePage() {
         } catch (err) {
             console.error(err);
         }
-    }
-        , 250), [])
+    }, 250), [])
+
     const handleDelete = useCallback(debounce((id, frutta) => {
         try {
             deleteFruits(id, frutta)
         } catch (error) {
             console.error(error);
-
         }
     }, 250), [])
 
@@ -176,14 +143,15 @@ export default function HomePage() {
 
     return (
         <>
+            {/* {customPointer} */}
             <section className='product-list'>
                 {/* SEARCH E ORDINAMENTO */}
                 <div className='home-filter'>
-                    <input type="ricerca" placeholder='cerca per nome' name='search' autoComplete='off' onChange={e => handleInput(e.target.value)} />
+                    <input style={{ cursor: text }} type="ricerca" placeholder='cerca per nome' name='search' autoComplete='off' onChange={e => handleInput(e.target.value)} />
                     {/* aggiungi funzione per mostrare i filtri */}
-                    <div><FontAwesomeIcon icon={faFilter} onClick={() => { setFilters(prev => !prev) }} /></div>
-                    <div data-value='category' className="sortable-header" onClick={handleSort}>category {sortBy === 'category' ? arrow : ''}</div>
-                    <div data-value='title' className="sortable-header" onClick={handleSort}>title {sortBy === 'title' ? arrow : ''}</div>
+                    <div className='cursor-pointer'><FontAwesomeIcon icon={faFilter} onClick={() => { setFilters(prev => !prev) }} /></div>
+                    <div data-value='category' className="sortable-header cursor-pointer" onClick={handleSort}>category {sortBy === 'category' ? arrow : ''}</div>
+                    <div data-value='title' className="sortable-header cursor-pointer" onClick={handleSort}>title {sortBy === 'title' ? arrow : ''}</div>
                 </div>
                 {/* CHECKBOX PER FILTRARE PER CATEGORIA */}
                 <form className={`${(!filters ? 'd-none' : 'd-flex')} home-filter-checkbox`}>
@@ -192,16 +160,16 @@ export default function HomePage() {
                         <input type="checkbox" name='checkbox' value='Tutti' onChange={handleBoxInput} />
                     </div>
                     {allCategory.map((item, index) => (
-                        <div key={index}>
+                        <div className='cursor-default' key={index}>
                             <label>{item}</label>
-                            <input type="checkbox" name='checkbox' value={item} onChange={handleBoxInput} />
+                            <input className='cursor-pointer' type="checkbox" name='checkbox' value={item} onChange={handleBoxInput} />
                         </div>
                     ))}
                 </form>
                 <section className='card-container' style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
                     {orderedData.length === 0 && <h2>Nessun risultato trovato</h2>}
                     {orderedData.map((item, index) => (
-                        <div className='card' id={item.id} key={index}>
+                        <div className='card cursor-default' id={item.id} key={index}>
                             <h2>{item.title}</h2>
                             <AppLike id={item.id}></AppLike>
                             <p>Categoria: {item.category}</p>
