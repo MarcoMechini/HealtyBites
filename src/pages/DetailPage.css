@@ -35,6 +35,7 @@ a:hover {
 /* Stile per la sezione principale */
 .card {
     max-width: 600px;
+    min-width: 250px;
     margin: 20px auto;
     padding: 20px;
     border: 1px solid #ddd;

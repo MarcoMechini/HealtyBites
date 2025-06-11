@@ -149,9 +149,11 @@ export default function HomePage() {
                 <div className='home-filter'>
                     <input style={{ cursor: text }} type="ricerca" placeholder='cerca per nome' name='search' autoComplete='off' onChange={e => handleInput(e.target.value)} />
                     {/* aggiungi funzione per mostrare i filtri */}
-                    <div className='cursor-pointer'><FontAwesomeIcon icon={faFilter} onClick={() => { setFilters(prev => !prev) }} /></div>
-                    <div data-value='category' className="sortable-header cursor-pointer" onClick={handleSort}>category {sortBy === 'category' ? arrow : ''}</div>
-                    <div data-value='title' className="sortable-header cursor-pointer" onClick={handleSort}>title {sortBy === 'title' ? arrow : ''}</div>
+                    <div className='btn-filter'>
+                        <div className='cursor-pointer filter'><FontAwesomeIcon icon={faFilter} onClick={() => { setFilters(prev => !prev) }} /></div>
+                        <div data-value='category' className="sortable-header cursor-pointer" onClick={handleSort}>category {sortBy === 'category' ? arrow : ''}</div>
+                        <div data-value='title' className="sortable-header cursor-pointer" onClick={handleSort}>title {sortBy === 'title' ? arrow : ''}</div>
+                    </div>
                 </div>
                 {/* CHECKBOX PER FILTRARE PER CATEGORIA */}
                 <form className={`${(!filters ? 'd-none' : 'd-flex')} home-filter-checkbox`}>
