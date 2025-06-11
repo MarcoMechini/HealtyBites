@@ -98,6 +98,14 @@ input[type="ricerca"] {
     gap: 20px;
     justify-content: center;
     padding: 20px;
+    min-height: calc(100vh - 516px);
+}
+
+.no-data {
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 12px;
+    height: fit-content;
 }
 
 /* Stile per le card */

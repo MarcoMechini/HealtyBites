@@ -35,8 +35,8 @@ a:hover {
 
 /* Stile aggiornato per la nav bar */
 nav {
-    /* background-image: url('/immagine-gocce.png'); */
     padding: 1rem;
+    height: 70px;
 }
 
 nav ul {

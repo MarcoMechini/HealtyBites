@@ -92,7 +92,7 @@ export default function HomePage() {
             }
         }
         if (elemDaConfrontare.length > 0) {
-            comparatorRef.current.focus()
+            comparatorRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     }
 
@@ -169,7 +169,7 @@ export default function HomePage() {
                     ))}
                 </form>
                 <section className='card-container' style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-                    {orderedData.length === 0 && <h2>Nessun risultato trovato</h2>}
+                    {orderedData.length === 0 && <h2 className='no-data'>Nessun risultato trovato</h2>}
                     {orderedData.map((item, index) => (
                         <div className='card cursor-default' id={item.id} key={index}>
                             <h2>{item.title}</h2>
