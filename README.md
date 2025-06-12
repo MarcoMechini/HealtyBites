@@ -20,37 +20,6 @@ Healthy Bites è un'applicazione web interattiva per la gestione e l'analisi dei
 
 Demo Live: **https://healty-bites.vercel.app/**
 
-## Installazione
+## Screenshot
 
-1. Clona il repository:
-   ```bash
-   git clone <URL-del-repository>
-   ```
-
-2. Naviga nella directory del progetto:
-   ```bash
-   cd progetto-finale-spec-frontend-front
-   ```
-
-3. Installa le dipendenze:
-   ```bash
-   npm install
-   ```
-
-4. Avvia l'applicazione in modalità sviluppo:
-   ```bash
-   npm run dev
-   ```
-
-5. Apri il browser e vai su `http://localhost:5173`.
-
-## Struttura del progetto
-
-- **src/**: Contiene il codice sorgente dell'applicazione.
-  - **components/**: Componenti riutilizzabili come `AppLike`, `AppModal`, e `Comparator`.
-  - **context/**: Contesto globale per la gestione dello stato.
-  - **pages/**: Pagine principali come `HomePage` e `DetailPage`.
-  - **hooks/**: Custom hooks come `useFruits`.
-  - **layout/**: Layout generale dell'app.
-- **public/**: File statici.
-- **back/**: Dati di esempio e tipi TypeScript.
+![alt text](image.png)
